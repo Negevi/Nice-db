@@ -1,0 +1,56 @@
+Prova Final:
+
+
+
+struct MyDatabase<T> {
+ connection: &str,
+ tables: Hashmap<&str, T>
+}
+
+impl MyDatabase {
+ fn connect(url: &str) {}
+ fn insert(table: &str, value: T) {}
+ fn update(table: &str, value: T) {}
+ fn delete(table: &str, value: T) {}
+ fn select(table: &str, value: T) {}
+}
+
+connection: Deve criar um arquivo caso nao exista, ou carregar caso ja exista. Depois deve carregar o atributo tables com os respectivos items do arquivo
+insert: Inserir um novo item numa tabela especifica, no fim da execucao, atualizar o arquivo.
+update: Atualizar um item numa tabela especifica, no fim da execucao, atualizar o arquivo.
+select: Pegar um item especifico numa tabela especifica, no fim da execucao, atualizar o arquivo.
+delete: Deletar um item existente numa tabela especifica, no fim da execucao, atualizar o arquivo.
+
+Consideracoes:
+O arquivo deve ser em .json, (exemplo db.json)
+Nao Ã© permitido usar tipo String, apenas &str
+
+
+Apos isso, implementar uma menu de tarefas:
+
+Exemplo:
+[1] (V) Comprar leite
+[2] () academia
+[3] () fazer dever de casa
+[0] Sair
+
+Selecionando 1:
+
+Tarefa: Comprar Leite
+Descricao: Preciso para o cafe da manha
+Data: 07/02/2023
+Status: V
+
+[1] Descompletar
+[2] Deletar
+[3] Alterar
+[4] Voltar
+
+
+DESAFIO = Fazer um sistema de log para a aplicacao, a cada execucao, uma linha deve ser adiciona num arquivo chamado relatorio_{EXECUCAO_X}.txt
+
+primeira vez executando o programa = relatorio_1.txt
+quinta vez = relatorio_5.txt
+
+path: D:\RustProvaFinal\database
+#[serde(rename_all = "camelCase")]
